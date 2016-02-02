@@ -14,29 +14,25 @@ router.get('/', function(req, res, next) {
       res.send(data)
     }
   })
-
-  /*Tenant.showAll(function(err, data) {
-    if (err) {
-      console.log('error occurred:' + err);
-      res.send(err)
-    } else {
-      res.send(data)
-    }
-  });*/
-
-  // .exec(function(err, tenants) {
-  //   if(err){
-  //     res.status(400).send(err);
-  //   }
-  //   else{
-  //     res.send(tenants);
-  //   }
-  // });
 });
 
 router.post('/', function(req, res, next) {
   Tenant.create( req.body)
   res.send();
 });
+
+router.delete('/:tenantId', function(req, res, next) {
+  console.log('Entered delete part 1');
+  Tenant.remove({_id: req.params.tenantId}, function(err) {
+    console.log('Entered delete part 2');
+    if (err) {
+      res.send('Remove failed:' + err)
+    } else {
+      res.send();
+    }
+  })
+});
+
+
 
 module.exports = router;
