@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apartment Manager</title>
+  <link rel="stylesheet" href="public/libs/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+    <div class="row" id="topSpacer"></div>
+    <table id="mainHost" class="table col-sm-12">
+      <!-- <div class="row" id="aptTemplate">
+        <div class="col-sm-2"><img src="" alt=""></div>
+        <div class="col-sm-10 info"></div>
+      </div> -->
+
+      <tr>
+        <th>Apartment</th>
+        <th>Occupied Rooms</th>
+        <th>Vacant Rooms</th>
+        <th>No of Tenants</th>
+        <th></th>
+        <th>View</th>
+      </tr>
+
+      <tr class="aptTemplate">
+        <td class="name"></td>
+        <td class="usedRooms"></td>
+        <td class="vacRooms"></td>
+        <td class="numTenants"></td>
+        <td></td>
+        <td class="viewButton"></td>
+      </tr>
+
+
+    </table>
+  </div>
+  <script src="public/libs/jquery/dist/jquery.min.js"></script>
+  <script src="apartment-manager.js"></script>
+</body>
+</html>
