@@ -16,12 +16,12 @@ var tenantSchema = mongoose.Schema( // Define a userSchema, instances will be do
 )
 
 
-tenantSchema.statics.showAll = function(callback) {
+/*tenantSchema.statics.showAll = function(callback) {
   Tenant.find({}, function(err, tenants){
     if(err) return err;
     return tenants;
   });
-}
+}*/
 
 
 Tenant = mongoose.model('Tenant', tenantSchema);

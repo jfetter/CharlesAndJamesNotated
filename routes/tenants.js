@@ -16,6 +16,7 @@ router.get('/', function(req, res, next) {
   })
 });
 
+// GET single tenant
 router.get('/:tenantId', function(req, res, next) {
   Tenant.find({_id:req.params.tenantId}, function(err, data) {
     if (err) {
@@ -25,6 +26,9 @@ router.get('/:tenantId', function(req, res, next) {
     }
   })
 });
+
+
+
 
 router.post('/', function(req, res, next) {
   Tenant.create( req.body)
