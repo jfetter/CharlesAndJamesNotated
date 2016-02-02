@@ -9,6 +9,16 @@ var Tenant = require('../models/tenants');
 router.get('/', function(req, res, next) {
   Tenant.find({}, function(err, data) {
     if (err) {
+      res.send('Could not find user[s]:' + err)
+    } else {
+      res.send(data)
+    }
+  })
+});
+
+router.get('/:tenantId', function(req, res, next) {
+  Tenant.find({_id:req.params.tenantId}, function(err, data) {
+    if (err) {
       res.send('Could not find user:' + err)
     } else {
       res.send(data)
