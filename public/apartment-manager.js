@@ -6,7 +6,7 @@ var $addTenant
 var $addApt
 var $maxRooms
 
-var $showApts
+var $showApt
 var $showTenants
 
 function init() {
@@ -14,13 +14,15 @@ function init() {
   $addTenant = $('#addTenant')
   $addApt = $('#addApt')
   $maxRooms = $('#maxRooms')
-  $showApts = $('#showApts')
+  $showApt = $('.view_but')
+
   $showTenants = $('#showTenants')
 
   $addTenant.on('click', addTenant)
   $addApt.on('click',  addApt)
   $maxRooms.on('click', maxRooms)
-  $showApts.on('click', showApts)
+  $('#mainHost').on('click', '.view_but', showApt)
+  // $showApt.on('click', showApt)
   $showTenants.on('click', showTenants)
 }
 
@@ -44,6 +46,7 @@ function initApts() {
 
       $newRow.find('.name').text(cur.name)
       $newRow.find('.imgURL').text(cur.imgURL)
+      $newRow.find('.view_but').attr('data-id', cur._id)
       $newRow.find('.maxRooms').text(cur.maxRooms)
 
 
@@ -55,5 +58,7 @@ function initApts() {
 function addTenant() {}
 function addApt() {}
 function maxRooms() {}
-function showApts() {}
+function showApt() {
+  console.log(this)
+}
 function showTenants() {}
