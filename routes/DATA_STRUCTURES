@@ -1,0 +1,80 @@
+var aptSchema = mongoose.Schema(
+{
+  {roomArr: {type }}
+}
+)
+//////////// STRATEGY 1
+aptBld
+  tenant
+  aptNum : [101,102... 201,202]
+
+tenant
+  room
+
+room
+  apt#
+
+  aptBld ={
+    tenant: [people]
+    apt# : [apartments]
+  }
+
+  tenant : {
+    fn
+    ln
+    apt Room
+  }
+
+  room : {
+    rent: Number
+    aptNum:
+  }
+  ///////////////
+
+  aptBld = {
+  aptNum = {
+    rooms = {
+      tenants = {
+
+      }
+      }
+    }
+  }
+/////////////
+AptBuilding = {
+  Apts = [Apt]
+}
+
+
+
+//////////////////
+Apt = {
+  rooms = [room]
+}
+
+room = {
+  rent: Number
+  image: img
+
+}
+
+Tenant = {
+  fn = String
+  ln = String
+  email: String
+  phone: String
+  AptRef: id of AptNum
+  RoomRef: id of room In Apt
+}
+
+API
+  /tenants return all   GET
+  /tenants/?fn=abc&ln=def GET w/query = single
+  /tenants/?&fn=xxx&ln=xxx&email=xxx&phone=xxx& ... //add POST use req.body
+  /tenants/?fieldtoChange=newValue&fieldtoChange=newValue... update PUT use req.body
+  /tenants/  Delete DELETE req.body._id
+
+
+/apartments get all
+
+/tenants/?aptid=# is an id# until populated with a listing
