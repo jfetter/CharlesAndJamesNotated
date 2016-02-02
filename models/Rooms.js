@@ -7,7 +7,8 @@ var Room;
 var roomSchema = mongoose.Schema( // Define a userSchema, instances will be documents
   {
      sqft: {type: Number},
-     rent: {type: Number}
+     rent: {type: Number},
+     roomNumber: {type: Number}
   }
 );
 

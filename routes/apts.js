@@ -32,8 +32,7 @@ router.post('/', function(req, res, next){
   Apt.create(req.body, function(err){
     if (err) {
       res.status(400).send(err);
-    }
-    else{
+    } else{
       res.send('Apartment Created!');
     }
   });

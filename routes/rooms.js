@@ -2,23 +2,23 @@ var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
 
-var Tenant = require('../models/tenants');
+var Room = require('../models/Rooms');
 
 
-/* GET ALL tenant listing. */
+/* GET ALL room listing. */
 router.get('/', function(req, res, next) {
-  Tenant.find({}, function(err, data) {
+  Room.find({}, function(err, data) {
     if (err) {
-      res.send('Could not find user[s]:' + err)
+      res.send('Could not find room:' + err)
     } else {
       res.send(data)
     }
   })
 });
 
-// GET single tenant
-router.get('/:tenantId', function(req, res, next) {
-  Tenant.find({_id:req.params.tenantId}, function(err, data) {
+// GET single room
+router.get('/:roomId', function(req, res, next) {
+  Room.find({_id:req.params.roomId}, function(err, data) {
     if (err) {
       res.send('Could not find user:' + err)
     } else {
@@ -29,21 +29,20 @@ router.get('/:tenantId', function(req, res, next) {
 
 
 
-
+//create new room
 router.post('/', function(req, res, next) {
-  Tenant.create( req.body, function(err){
+  Room.create( req.body, function(err){
     if (err) {
       res.status(400).send(err);
     } else{
-      res.send('Tenant Created!');
+      res.send('Room Created!');
     }
   });
 });
 
-router.delete('/:tenantId', function(req, res, next) {
-  console.log('Entered delete part 1');
-  Tenant.remove({_id: req.params.tenantId}, function(err) {
-    console.log('Entered delete part 2');
+//delete room
+router.delete('/:roomId', function(req, res, next) {
+  Room.remove({_id: req.params.roomId}, function(err) {
     if (err) {
       res.send('Remove failed:' + err)
     } else {
