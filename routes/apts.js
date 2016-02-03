@@ -12,7 +12,10 @@ router.get('/:aptId', function(req, res, next){
     else{
       res.send(data);
     }
-  })
+    // if this route is for a detailed show page for the apartment,
+    //you can use populate here to fill in details about the 
+    // schemas for the docuements you referenced in the apt schema
+  })//.populate('rooms tenants');
 });
 
 router.get('/', function(req, res, next){
@@ -26,6 +29,26 @@ router.get('/', function(req, res, next){
     }
   })
 });
+
+
+//post new apt
+router.post('/new', function(req, res){
+  var newApt = req.body;
+  newApt = new Apt;
+  newApt.name = newApt.name;
+  newApt.vacantRooms = newApt.vacantRooms;
+  newApt.fullRooms = newApt.vacantRooms;
+  newApt.tenants = newApt.tenant;
+  newApt.save(function(err, savedApt){
+    if (err){
+      res.status(400).send(err);
+    } else {
+      res.send(savedApt);
+    }
+  })
+})
+
+
 
 
 router.post('/', function(req, res, next){

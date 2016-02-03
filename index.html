@@ -16,26 +16,48 @@
         <div class="col-sm-10 info"></div>
       </div> -->
 
+
+
+<!--       input data for post route -->
+      <th colspan="5" class="text-center">input new</th>
+      <tr class="postData">
+        <td class="name"><input type="text" class="aptName" placeholder="apt#"></td>
+        <td class="usedRooms"><input type="number" class="fullRooms" placeholder="occupied rms"></td>
+        <td class="vacRooms"><input type="number" class="vacantRooms" placeholder="vacant rms"></td>
+        <td class="numTenants">
+          <select class="tenantsDropDown" placeholder="tenants">
+           <!--  append existing tenant names here -->
+          <select>
+          </td>
+        <td></td>
+        <td>
+          <button class="addNew btn btn-default view_but">submit </button>
+        </td>
+      </tr>
+
+
+      <tr>
+        <th colspan="5" class="text-center">existing</th>
+      </tr>
       <tr>
         <th>Apartment</th>
         <th>Occupied Rooms</th>
         <th>Vacant Rooms</th>
         <th>No of Tenants</th>
         <th></th>
-        <th>View</th>
+       <!--  <th>View</th> -->
       </tr>
 
-      <tr class="aptTemplate">
+    <tr class="aptTemplate">
         <td class="name"></td>
         <td class="usedRooms"></td>
         <td class="vacRooms"></td>
         <td class="numTenants"></td>
         <td></td>
         <td>
-          <button data-id="" class="btn btn-default view_but">View Apartment</button>
+          <button data-id="" class="btn btn-default view_but">View Apartment  </button>
         </td>
       </tr>
-
 
     </table>
   </div>
